@@ -4,7 +4,7 @@ import Navbar from './component/Navbar/Navbar';
 
 function App() {
   return (
-    <div className='container mx-auto px-4 flex'>
+    <div className='mx-auto px-4 flex w-full min-h-screen border border-black'>
       <Navbar/>
       <Outlet/>
     </div>
