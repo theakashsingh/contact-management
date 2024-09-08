@@ -9,6 +9,7 @@ const ContactForm: React.FC = () => {
   const [lastName, setLastName] = useState("");
   const [status, setStatus] = useState<"active" | "inactive">("active");
   const [isContactForm, setIsContactForm] = useState<boolean>(false);
+  const [isContactBanner, setIsContactBanner] = useState<boolean>(true);
   const dispatch = useDispatch();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -22,6 +23,7 @@ const ContactForm: React.FC = () => {
 
   const showContactForm = () => {
     setIsContactForm(true);
+    setIsContactBanner(false)
   };
 
   return (
@@ -35,9 +37,9 @@ const ContactForm: React.FC = () => {
         </button>
       )}
 
-      {contacts.length === 0 || isContactForm ? (
+      {(contacts.length === 0 && isContactBanner) && (
         <div className="container flex justify-center items-center gap-2">
-          <span className="w-5 h-5 rounded-full bg-black text-white p-4 flex items-center justify-center cursor-pointer">
+          <span onClick={()=>setIsContactBanner(false)} className="w-5 h-5 rounded-full bg-black text-white p-4 flex items-center justify-center cursor-pointer">
             X
           </span>
           <div>
@@ -45,7 +47,7 @@ const ContactForm: React.FC = () => {
             <h4>Please add contact from create contact button</h4>
           </div>
         </div>
-      ) : null}
+      )}
       {isContactForm && (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
