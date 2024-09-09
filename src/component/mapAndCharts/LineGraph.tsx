@@ -24,8 +24,8 @@ const LineGraph: React.FC = () => {
   }));
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={chartData}>
+    <ResponsiveContainer width="100%" height={400} >
+      <LineChart data={chartData} style={{padding:"2rem"}}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis />
