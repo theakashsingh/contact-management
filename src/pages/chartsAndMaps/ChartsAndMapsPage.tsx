@@ -10,11 +10,15 @@ const ChartsAndMaps = () => {
       </h1>
       <div className="p-10 -z-40">
         <div>
-        <h2 className="text-xl font-semibold mb-4 text-center">Graph Covid Data</h2>
+          <h2 className="text-xl font-semibold mb-4 text-center">
+            Graph Covid Data
+          </h2>
           <LineGraph />
         </div>
         <div className="mt-10">
-        <h2 className="text-xl font-semibold mb-4 text-center">Map Covid Data</h2>
+          <h2 className="text-xl font-semibold mb-4 text-center">
+            Map Covid Data
+          </h2>
           <MapComponent />
         </div>
       </div>

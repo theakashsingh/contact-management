@@ -1,6 +1,6 @@
 // src/store/contactSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Contact } from '../types/ContactType';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Contact } from "../types/ContactType";
 
 interface ContactState {
   contacts: Contact[];
@@ -11,27 +11,32 @@ const initialState: ContactState = {
 };
 
 const contactSlice = createSlice({
-  name: 'contacts',
+  name: "contacts",
   initialState,
   reducers: {
-    addContact: (state, action: PayloadAction<Omit<Contact, 'id'>>) => {
+    addContact: (state, action: PayloadAction<Omit<Contact, "id">>) => {
       const newContact = {
         ...action.payload,
-        id: Date.now().toString()
+        id: Date.now().toString(),
       };
       state.contacts.push(newContact);
     },
     updateContact: (state, action: PayloadAction<Contact>) => {
-      const index = state.contacts.findIndex(contact => contact.id === action.payload.id);
+      const index = state.contacts.findIndex(
+        contact => contact.id === action.payload.id
+      );
       if (index !== -1) {
         state.contacts[index] = action.payload;
       }
     },
     deleteContact: (state, action: PayloadAction<string>) => {
-      state.contacts = state.contacts.filter(contact => contact.id !== action.payload);
+      state.contacts = state.contacts.filter(
+        contact => contact.id !== action.payload
+      );
     },
   },
 });
 
-export const { addContact, updateContact, deleteContact } = contactSlice.actions;
+export const { addContact, updateContact, deleteContact } =
+  contactSlice.actions;
 export default contactSlice.reducer;

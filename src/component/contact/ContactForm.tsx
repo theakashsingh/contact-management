@@ -23,7 +23,7 @@ const ContactForm: React.FC = () => {
 
   const showContactForm = () => {
     setIsContactForm(true);
-    setIsContactBanner(false)
+    setIsContactBanner(false);
   };
 
   return (
@@ -37,9 +37,12 @@ const ContactForm: React.FC = () => {
         </button>
       )}
 
-      {(contacts.length === 0 && isContactBanner) && (
+      {contacts.length === 0 && isContactBanner && (
         <div className="container flex justify-center items-center gap-2 mt-5">
-          <span onClick={()=>setIsContactBanner(false)} className="w-5 h-5 rounded-full bg-black text-white p-4 flex items-center justify-center cursor-pointer">
+          <span
+            onClick={() => setIsContactBanner(false)}
+            className="w-5 h-5 rounded-full bg-black text-white p-4 flex items-center justify-center cursor-pointer"
+          >
             X
           </span>
           <div>
@@ -62,7 +65,7 @@ const ContactForm: React.FC = () => {
               id="firstName"
               value={firstName}
               onChange={e => setFirstName(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full px-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -78,7 +81,7 @@ const ContactForm: React.FC = () => {
               id="lastName"
               value={lastName}
               onChange={e => setLastName(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full px-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               required
             />
           </div>

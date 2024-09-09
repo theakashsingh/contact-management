@@ -1,8 +1,8 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store/store';
-import { deleteContact } from '../../store/contactSlice';
-import { Contact } from '../../types/ContactType';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store/store";
+import { deleteContact } from "../../store/contactSlice";
+import { Contact } from "../../types/ContactType";
 
 interface ContactListProps {
   onEditContact: (contact: Contact) => void;
@@ -16,12 +16,19 @@ const ContactList: React.FC<ContactListProps> = ({ onEditContact }) => {
     <div className="mt-6">
       <h2 className="text-lg font-semibold mb-4">Contact List</h2>
       <ul className="space-y-4">
-        {contacts.map((contact) => (
-          <li key={contact.id} className="bg-white shadow overflow-hidden sm:rounded-lg p-4">
+        {contacts.map(contact => (
+          <li
+            key={contact.id}
+            className="bg-white shadow overflow-hidden sm:rounded-lg p-4"
+          >
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-lg font-medium text-gray-900">{contact.firstName} {contact.lastName}</p>
-                <p className="text-sm text-gray-500">Status: {contact.status}</p>
+                <p className="text-lg font-medium text-gray-900">
+                  {contact.firstName} {contact.lastName}
+                </p>
+                <p className="text-sm text-gray-500">
+                  Status: {contact.status}
+                </p>
               </div>
               <div>
                 <button

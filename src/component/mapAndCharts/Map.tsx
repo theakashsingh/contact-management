@@ -44,7 +44,7 @@ const MapComponent: React.FC = () => {
 
   return (
     <MapContainer
-      style={{ height: "600px", width: "100%", zIndex:"1" }}
+      style={{ height: "600px", width: "100%", zIndex: "1" }}
       scrollWheelZoom={false}
     >
       <TileLayer
@@ -61,9 +61,15 @@ const MapComponent: React.FC = () => {
           <Popup>
             <div>
               <h3>{country.country}</h3>
-              <p><strong>Active cases:</strong> {country.active}</p>
-              <p><strong>Recovered:</strong> {country.recovered}</p>
-              <p><strong>Deaths:</strong> {country.deaths}</p>
+              <p>
+                <strong>Active cases:</strong> {country.active}
+              </p>
+              <p>
+                <strong>Recovered:</strong> {country.recovered}
+              </p>
+              <p>
+                <strong>Deaths:</strong> {country.deaths}
+              </p>
             </div>
           </Popup>
         </Marker>
