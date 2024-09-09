@@ -10,7 +10,7 @@ function App() {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <div className="mx-auto px-4 flex w-full min-h-screen border border-black">
+        <div className="mx-auto md:flex-row flex-col flex w-full min-h-screen">
           <Navbar />
           <div className="w-full">
             <Outlet />

@@ -17,11 +17,11 @@ const ContactsPage: React.FC = () => {
 
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Contacts</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="mx-auto bg-[#ECE9E4] min-h-screen">
+      <h1 className="text-3xl font-bold mb-6 py-4 md:sticky top-0 text-center md:bg-blue-500">Contacts</h1>
+      <div className="p-10">
         <div>
-          <h2 className="text-xl font-semibold mb-4">Add New Contact</h2>
+          <h2 className="text-xl font-semibold mb-4 text-center">Add New Contact</h2>
           <ContactForm />
         </div>
         <div>

@@ -38,7 +38,7 @@ const ContactForm: React.FC = () => {
       )}
 
       {(contacts.length === 0 && isContactBanner) && (
-        <div className="container flex justify-center items-center gap-2">
+        <div className="container flex justify-center items-center gap-2 mt-5">
           <span onClick={()=>setIsContactBanner(false)} className="w-5 h-5 rounded-full bg-black text-white p-4 flex items-center justify-center cursor-pointer">
             X
           </span>

@@ -1,4 +1,3 @@
-// src/api/covidApi.ts
 import axios from 'axios';
 
 const BASE_URL = 'https://disease.sh/v3/covid-19';
